@@ -41,7 +41,7 @@ class Piggy(PiggyParent):
                 "f": ("Follow", self.follow),
                 "c": ("Calibrate", self.calibrate),
                 "q": ("Quit", self.quit),
-                "v": ("Vanek Test", self.vanek)
+                "j": ("Jon Test", self.jon)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -56,7 +56,7 @@ class Piggy(PiggyParent):
     STUDENT PROJECTS
     ****************
     '''
-    def vanek(self):
+    def jon(self):
       
       for i in range(4):
         self.fwd()
