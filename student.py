@@ -59,10 +59,11 @@ class Piggy(PiggyParent):
     def jon(self):
       
       for i in range(4):
-        self.fwd()
-        time.sleep(2)
+        self.deg_fwd(360)
+        time.sleep(3)
+        self.right(primary = 40, counter = -40)
+        time.sleep(1.2)
         self.stop()
-        self.turn_by_deg(90)
       
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
