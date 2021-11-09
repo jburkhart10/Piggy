@@ -57,7 +57,7 @@ class Piggy(PiggyParent):
     ****************
     '''
     def jon(self):
-      
+      print("starting square")
       for i in range(4):
         self.fwd()
         time.sleep(3)
