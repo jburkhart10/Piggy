@@ -59,7 +59,7 @@ class Piggy(PiggyParent):
     def jon(self):
       
       for i in range(4):
-        self.deg_fwd(360)
+        self.fwd()
         time.sleep(3)
         self.right(primary = 40, counter = -40)
         time.sleep(1.2)
