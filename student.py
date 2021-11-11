@@ -41,7 +41,8 @@ class Piggy(PiggyParent):
                 "f": ("Follow", self.follow),
                 "c": ("Calibrate", self.calibrate),
                 "q": ("Quit", self.quit),
-                "j": ("Jon Test", self.jon)
+                "j": ("Jon Test", self.jon), 
+                "w": ("Wall close?", self.wall_close)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -60,6 +61,9 @@ class Piggy(PiggyParent):
       while True:
         self.read_distance()
       
+    def wall_close(self):
+
+
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
         
@@ -73,6 +77,12 @@ class Piggy(PiggyParent):
         time.sleep(1)
         self.stop()
         
+    def no_wall():
+      if hal.xcor() < 200 and hal.xcor() > -200:
+        return True
+      else:
+        hal.right(90)
+        return False
 
     def safe_to_dance(self):
         """ Does a 360 distance check and returns true if safe """
