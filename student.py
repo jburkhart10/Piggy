@@ -59,11 +59,12 @@ class Piggy(PiggyParent):
     '''
     def jon(self):
       while True:
-        self.fwd()
         self.read_distance()
-      if self.read_distance()<50:
-        self.stop()
-        
+        if self.read_distance()<50:
+          self.stop()
+        else:
+          self.fwd()
+
     def wall_close(self):
       self.stop()
 
