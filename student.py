@@ -63,7 +63,9 @@ class Piggy(PiggyParent):
         self.read_distance()
       if self.read_distance()<50:
         self.stop()
+        
     def wall_close(self):
+      self.stop()
 
 
     def dance(self):
