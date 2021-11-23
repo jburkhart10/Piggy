@@ -59,7 +59,7 @@ class Piggy(PiggyParent):
     '''
     def jon(self):
       while True:
-        if self.read_distance()<50:
+        if (self.read_distance()<300):
           self.right(primary=100, counter=-100)
           time.sleep(1)
           self.stop()
