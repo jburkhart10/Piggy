@@ -1,4 +1,5 @@
-#!/usr/bin python3
+
+!/usr/bin python3
 from teacher import PiggyParent
 import sys
 import time
@@ -43,6 +44,7 @@ class Piggy(PiggyParent):
                 "q": ("Quit", self.quit),
                 "j": ("Jon Test", self.jon), 
                 "w": ("Wall close?", self.wall_close)
+                "r": ("Ron Test", self.ron)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -73,6 +75,57 @@ class Piggy(PiggyParent):
         else:
           self.fwd()
 
+
+    def jon2(self):
+      while True:
+        if (self.read_distance()<300):
+          self.stop()
+          self.left(primary=100, counter=-100)
+          time.sleep(3)
+          self.stop()
+          self.fwd()
+          time.sleep(1)
+          self.stop()
+          self.right(primary=100, counter=-100)
+          time.sleep(0.5)
+          self.stop()
+        else:
+          self.fwd()
+
+
+    def ron(self):
+      while True:
+        if (self.read_distance()<300):
+          self.servo(800)
+          time.sleep(1)
+          self.stop()
+          right = self.read_distance()
+          self.servo(2000)
+          time.sleep(1)
+          self.stop()
+          left = self.read_distance()
+          if (right>left):
+           self.servo(MIDPOINT)
+           time.sleep()
+           self.stop()
+           self.jon()
+          if (left>right):
+           self.servo(MIDPOINT)
+           time.sleep()
+           self.stop()
+           self.jon2()
+        else:
+          self.fwd()
+
+        
+    
+    
+    
+    
+    
+    
+    
+    
     def wall_close(self):
       self.stop()
 
