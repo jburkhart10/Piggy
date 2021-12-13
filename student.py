@@ -1,4 +1,4 @@
-
+ def lon(self)
 #!/usr/bin python3
 from teacher import PiggyParent
 import sys
@@ -44,7 +44,8 @@ class Piggy(PiggyParent):
                 "q": ("Quit", self.quit),
                 "j": ("Jon Test", self.jon), 
                 "w": ("Wall close?", self.wall_close),
-                "r": ("Ron Test", self.ron)
+                "r": ("Ron Test", self.ron),
+                "l": ("Lon Test", self.lon)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -94,31 +95,61 @@ class Piggy(PiggyParent):
 
 
     def ron(self):
+      stop_distance = 250
       while True:
         if (self.read_distance()<300):
           self.servo(800)
-          time.sleep(1)
-          self.stop()
+          time.sleep(0.1)
           right = self.read_distance()
           self.servo(2000)
-          time.sleep(1)
-          self.stop()
+          time.sleep(0.1)
           left = self.read_distance()
-          if (right>left):
-           self.servo(MIDPOINT)
-           time.sleep()
-           self.stop()
-           self.jon()
-          if (left>right):
-           self.servo(MIDPOINT)
-           time.sleep()
-           self.stop()
-           self.jon2()
+          self.servo(self.MIDPOINT)
+          time.sleep(0.1)
+          center = self.read_distance()
+          if (right < stop_distance and center>stop_distance):
+           self.servo(self.MIDPOINT)
+           self.swerve_left()
+          elif (left < stop_distance and center>stop_distance):
+           self.servo(self.MIDPOINT)
+           self.swerve_right()
+          elif (center<stop_distance):
+            pass
+
         else:
           self.fwd()
 
-        
+          
+    def swerve_left(self):
+      self.left(primary=100, counter=70)
+      time.sleep(.5)
+      self.right(primary=100, counter=70)
+      time.sleep(.5)
+
+    def swerve_right(self):
+      self.right(primary=100, counter=70)
+      time.sleep(.5)
+      self.left(primary=100, counter=70)
+      time.sleep(.5)
+
     
+    def lon(self):
+      while True:
+        self.fwd()
+        self.servo(2000)
+        if (self.read_distance()<300):
+          self.gon("right")
+          
+
+
+    def gon(self, bon="right"):
+      self.fwd
+      if "right" in bon:
+        self.right(primary=50, counter=30)
+
+
+        
+
     
     
     
