@@ -131,14 +131,15 @@ class Piggy(PiggyParent):
       time.sleep(.5)
       self.left(primary=100, counter=70)
       time.sleep(.5)
-
+    
+    """
     def lon(self):
       while True:
         self.fwd()
         self.servo(2000)
         if (self.read_distance()<300):
           self.gon("right")
-          
+    """    
 
 
     def gon(self, bon="right"):
