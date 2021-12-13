@@ -132,7 +132,6 @@ class Piggy(PiggyParent):
       self.left(primary=100, counter=70)
       time.sleep(.5)
 
-    
     def lon(self):
       while True:
         self.fwd()
