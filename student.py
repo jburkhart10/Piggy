@@ -132,31 +132,11 @@ class Piggy(PiggyParent):
       self.left(primary=100, counter=70)
       time.sleep(.5)
     
-    """
-    def lon(self):
-      while True:
-        self.fwd()
-        self.servo(2000)
-        if (self.read_distance()<300):
-          self.gon("right")
-    """    
-
-
     def gon(self, bon="right"):
       self.fwd
       if "right" in bon:
         self.right(primary=50, counter=30)
 
-
-        
-
-    
-    
-    
-    
-    
-    
-    
     def wall_close(self):
       self.stop()
 
