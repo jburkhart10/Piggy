@@ -108,12 +108,12 @@ class Piggy(PiggyParent):
           center = self.read_distance()
           if (right < stop_distance and center>stop_distance):
            self.servo(self.MIDPOINT)
-           self.swerve_left()
+           self.jon2()
           elif (left < stop_distance and center>stop_distance):
            self.servo(self.MIDPOINT)
-           self.swerve_right()
-          elif (center<stop_distance):
-            self.jon()
+           self.jon()
+          
+            
 
         else:
           self.fwd()
