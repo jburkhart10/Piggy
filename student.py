@@ -42,7 +42,6 @@ class Piggy(PiggyParent):
                 "c": ("Calibrate", self.calibrate),
                 "q": ("Quit", self.quit),
                 "j": ("Jon Test", self.jon), 
-                "w": ("Wall close?", self.wall_close),
                 "r": ("Ron Test", self.ron),
                 "l": ("Lon Test", self.lon)
                 }
@@ -159,10 +158,6 @@ class Piggy(PiggyParent):
     
     
     
-    def wall_close(self):
-      self.stop()
-
-
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
         
