@@ -113,7 +113,7 @@ class Piggy(PiggyParent):
            self.servo(self.MIDPOINT)
            self.swerve_right()
           elif (center<stop_distance):
-            pass
+            self.jon()
 
         else:
           self.fwd()
