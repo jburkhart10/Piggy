@@ -44,7 +44,8 @@ class Piggy(PiggyParent):
                 "j": ("Jon Test", self.jon), 
                 "r": ("Ron Test", self.ron),
                 "l": ("Lon Test", self.lon),
-                "m": ("Maze Test", self.maze)
+                "m": ("Maze Test", self.maze),
+                "h": ("Hon Test", self.hon)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -167,6 +168,15 @@ class Piggy(PiggyParent):
             time.sleep(0.3)
             self.stop()
           
+
+    def hon(self):
+      while True:
+        self.fwd()
+        self.servo(1100)
+        time.sleep(.1)
+        self.servo(1900)
+        time.sleep(.1)
+
 
 
         
