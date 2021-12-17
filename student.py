@@ -110,10 +110,10 @@ class Piggy(PiggyParent):
           time.sleep(1)
           self.stop()
           center = self.read_distance()
-          if (right < stop_distance and center>stop_distance):
+          if (right < left):
            self.servo(self.MIDPOINT)
            self.jon2()
-          elif (left < stop_distance and center>stop_distance):
+          elif (left < right ):
            self.servo(self.MIDPOINT)
            self.jon()
           
