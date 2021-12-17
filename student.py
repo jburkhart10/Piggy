@@ -60,7 +60,7 @@ class Piggy(PiggyParent):
     ****************
     '''
     def jon(self):
-      while True:
+      
         if (self.read_distance()<300):
           self.stop()
           self.right(primary=100, counter=-100)
@@ -77,7 +77,7 @@ class Piggy(PiggyParent):
 
 
     def jon2(self):
-      while True:
+     
         if (self.read_distance()<300):
           self.stop()
           self.left(primary=100, counter=-100)
