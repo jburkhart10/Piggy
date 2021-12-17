@@ -94,8 +94,8 @@ class Piggy(PiggyParent):
 
     def ron(self):
       stop_distance = 200
-      while True:
-        if (self.read_distance()<stop_distance):
+     
+      if (self.read_distance()<stop_distance):
           self.stop()
           self.servo(1100)
           time.sleep(1)
@@ -118,8 +118,7 @@ class Piggy(PiggyParent):
           
             
 
-        else:
-          self.fwd()
+       
 
           
     def swerve_left(self):
@@ -173,9 +172,22 @@ class Piggy(PiggyParent):
       while True:
         self.fwd()
         self.servo(1100)
-        time.sleep(.1)
+        time.sleep(.25)
+        if self.read_distance()<150:
+          self.stop()
+          self.servo(self.MIDPOINT)
+          time.sleep(.25)
+          if self.read_distance()<150:
+            self.ron()
+          else: 
+            self.left(primary=80, counter=60)
+            time.sleep(1)
+            self.right(primary=80, counter=60)
+            time.sleep(1)
+
         self.servo(1900)
-        time.sleep(.1)
+        time.sleep(.25)
+
 
 
 
