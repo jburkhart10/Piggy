@@ -94,7 +94,7 @@ class Piggy(PiggyParent):
 
 
     def ron(self):
-      stop_distance = 250
+      stop_distance = 200
       while True:
         if (self.read_distance()<stop_distance):
           self.stop()
@@ -102,7 +102,7 @@ class Piggy(PiggyParent):
           time.sleep(1)
           self.stop()
           right = self.read_distance()
-          self.servo(1700)
+          self.servo(1900)
           time.sleep(1)
           self.stop()
           left = self.read_distance()
