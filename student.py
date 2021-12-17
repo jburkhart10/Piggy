@@ -1,4 +1,4 @@
-#!/usr/bin python3
+  #!/usr/bin python3
 from teacher import PiggyParent
 import sys
 import time
@@ -96,7 +96,7 @@ class Piggy(PiggyParent):
     def ron(self):
       stop_distance = 250
       while True:
-        if (self.read_distance()<300):
+        if (self.read_distance()<stop_distance):
           self.stop()
           self.servo(900)
           time.sleep(1)
@@ -167,6 +167,7 @@ class Piggy(PiggyParent):
             self.right(primary=100, counter=-100)
             time.sleep(0.5)
             self.stop()
+          self.servo(self.MIDPOINT)
 
 
         
