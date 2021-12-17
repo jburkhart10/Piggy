@@ -185,10 +185,21 @@ class Piggy(PiggyParent):
             self.right(primary=80, counter=60)
             time.sleep(1)
 
+
         self.servo(1900)
         time.sleep(.25)
 
-
+        if self.read_distance()<150:
+          self.stop()
+          self.servo(self.MIDPOINT)
+          time.sleep(.25)
+          if self.read_distance()<150:
+            self.ron()
+          else: 
+            self.right(primary=80, counter=60)
+            time.sleep(1)
+            self.left(primary=80, counter=60)
+            time.sleep(1)
 
 
         
